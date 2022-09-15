@@ -84,15 +84,15 @@ function App() {
         </div>
         <div className="centermain relative min-h-screen md:h-screen w-full">
           <div className="firstdiv bg-blue-00 h-3/4 lg:h-3/5 md:h-3/5   lg:w-full justify-between flex flex-col">
-            <div className="textweather lg:text-4xl font-bold text-white p-6  ">
+            <div className="textweather lg:text-4xl 3xl:text-7xl font-bold text-white p-6  ">
               <h1>
-                Weather App <span className="text-xs opacity-10">(ashujha)</span>
+                Weather App <span className="text-xs 3xl:text-4xl opacity-10">(Ashujha)</span>
               </h1>
             </div>
             <div className="search pb-2">
               <div className="searchbox">
                 <input
-                  className="p-2 pl-4 w-80 bg-transparent border-b-2 outline-none text-white text-lg"
+                  className="p-2 pl-4 w-80 3xl:w-96 bg-transparent border-b-2 outline-none text-white text-lg 3xl:text-4xl"
                   placeholder="Search location"
                   id="search"
                   value={searchValue}
@@ -102,20 +102,20 @@ function App() {
             </div>
           </div>
           <div className="seconddiv bg-red-00 h-1/4 lg:h-2/5 md:h-2/5 lg:w-full lg:flex md:flex backdrop-blur">
-            <div className="places lg:w-1/6 md:w-1/6  bg-yellow-00 text-md lg:text-lg md:text-xl font-bold text-white lg:pl-4 pl-4 lg:space-y-4 md:space-y-14 border-b">
-              <div className="" onClick={(e) => setsearchValue("Delhi")}>
+            <div className="places lg:w-1/6 md:w-1/6  bg-yellow-00 text-md lg:text-lg md:text-xl 3xl:text-4xl 3xl:space-y-10 font-bold text-white lg:pl-4 pl-4 lg:space-y-4 md:space-y-14 border-b">
+              <div className="cursor-pointer" onClick={(e) => setsearchValue("Delhi")}>
                 Delhi
               </div>
-              <div className="" onClick={(e) => setsearchValue("Mumbai")}>
+              <div className="cursor-pointer" onClick={(e) => setsearchValue("Mumbai")}>
                 Mumbai
               </div>
-              <div className="" onClick={(e) => setsearchValue("Sitamarhi")}>
+              <div className="cursor-pointer" onClick={(e) => setsearchValue("Sitamarhi")}>
                 Sitamarhi
               </div>
-              <div className="" onClick={(e) => setsearchValue("Noida")}>
+              <div className="cursor-pointer " onClick={(e) => setsearchValue("Noida")}>
                 Noida
               </div>
-              <div className="" onClick={(e) => setsearchValue("Jammu")}>
+              <div className="cursor-pointer" onClick={(e) => setsearchValue("Jammu")}>
                 Jammu
               </div>
               {/* <div className="" onClick={(e) => setsearchValue("Siliguri")}>
@@ -126,55 +126,55 @@ function App() {
               </div> */}
             </div>
             <div className="temp lg:w-1/6 md:w-1/6 bg-yellow-00 flex flex-col justify-center text-center border-r border-b">
-              <div className="text-white font-bold text-2xl lg:text-6xl md:text-4xl">
+              <div className="text-white font-bold text-2xl lg:text-6xl md:text-4xl 3xl:text-8xl">
                 {tempInfo?.temp}
               </div>
-              <div className="place text-white font-bold lg:text-xl">
+              <div className="place text-white font-bold lg:text-xl 3xl:text-3xl">
                 {tempInfo?.name}, {tempInfo?.country}
               </div>
-              <div className="text-white">
+              <div className="text-white 3xl:text-2xl">
                 {new Date().toLocaleDateString()}
               </div>
               <div className="weathericon bg-yellow-00 text-center flex justify-center">
                 {tempInfo?.weathermood === "Haze" && (
-                  <WiDayCloudy className="text-white text-5xl lg:text-7xl" />
+                  <WiDayCloudy className="text-white text-5xl lg:text-7xl 3xl:text-8xl" />
                 )}
                 {tempInfo?.weathermood === "Rain" && (
-                  <WiRainWind className="text-white text-7xl" />
+                  <WiRainWind className="text-white text-7xl 3xl:text-8xl" />
                 )}
                 {tempInfo?.weathermood === "Clear" && (
-                  <WiCloud className="text-white text-7xl" />
+                  <WiCloud className="text-white text-7xl 3xl:text-8xl" />
                 )}
                 {tempInfo?.weathermood === "Clouds" && (
-                  <WiCloudy className="text-white text-7xl" />
+                  <WiCloudy className="text-white text-7xl 3xl:text-8xl" />
                 )}
                 {tempInfo?.weathermood === "Thunderstorm" && (
-                  <WiNightLightning className="text-white text-7xl" />
+                  <WiNightLightning className="text-white text-7xl 3xl-text-8xl" />
                 )}
                 {tempInfo?.weathermood === "Mist" && (
-                  <WiFog className="text-white text-7xl" />
+                  <WiFog className="text-white text-7xl 3xl:text-8xl" />
                 )}
                 {tempInfo?.weathermood === "Drizzle" && (
-                  <WiRaindrop className=" text-7xl text-blue-300" />
+                  <WiRaindrop className=" text-7xl text-blue-300 3xl:text-8xl" />
                 )}
               </div>
-              <div className="text-white font-bold text-">
+              <div className="text-white font-bold 3xl:text-3xl">
                 {tempInfo?.weathermood}
               </div>
             </div>
-            <div className="mood lg:w-1/6 md:w-1/6 bg-yellow-00 lg:text-2xl md:text-2xl font-bold text-white space-y-1 lg:space-y-7 md:space-y-10 flex flex-col justify-center text-center border-r border-b">
+            <div className="mood lg:w-1/6 md:w-1/6 bg-yellow-00 lg:text-2xl md:text-2xl 3xl:text-4xl font-bold text-white space-y-1 lg:space-y-7 md:space-y-10 flex flex-col justify-center text-center border-r border-b">
               <div>Mood</div>
               <div> {tempInfo?.weathermood}</div>
             </div>
-            <div className="humidity lg:w-1/6 md:w-1/6 bg-gray-00 lg:text-2xl md:text-2xl font-bold text-white space-y-1 lg:space-y-7 md:space-y-10 flex flex-col justify-center text-center border-r border-b">
+            <div className="humidity lg:w-1/6 md:w-1/6 bg-gray-00 lg:text-2xl md:text-2xl 3xl:text-4xl font-bold text-white space-y-1 lg:space-y-7 md:space-y-10 flex flex-col justify-center text-center border-r border-b">
               <div>Humidity</div>
               <div> {tempInfo?.humidity}</div>
             </div>
-            <div className="wind lg:w-1/6 md:w-1/6 bg-gray-00 lg:text-2xl md:text-2xl font-bold text-white space-y-1 lg:space-y-7 md:space-y-10 flex flex-col justify-center text-center border-r border-b">
+            <div className="wind lg:w-1/6 md:w-1/6 bg-gray-00 lg:text-2xl md:text-2xl 3xl:text-4xl font-bold text-white space-y-1 lg:space-y-7 md:space-y-10 flex flex-col justify-center text-center border-r border-b">
               <div>Wind</div>
               <div>{tempInfo?.speed}</div>
             </div>
-            <div className="sunset lg:w-1/6 md:w-1/6 bg-yellow-00 lg:text-2xl md:text-2xl font-bold text-white space-y-1 lg:space-y-7 md:space-y-10 flex flex-col justify-center text-center border-r border-b">
+            <div className="sunset lg:w-1/6 md:w-1/6 bg-yellow-00 lg:text-2xl md:text-2xl 3xl:text-4xl font-bold text-white space-y-1 lg:space-y-7 md:space-y-10 flex flex-col justify-center text-center border-r border-b">
               <div>Sunset</div>
               <div> {tempInfo?.sunset}</div>
             </div>
